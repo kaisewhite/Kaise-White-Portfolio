@@ -45,10 +45,10 @@ const Header = () => {
           </Button>
           <Button color="inherit">
             <Link
-              to="/stack"
+              to="/about"
               style={{ color: "white", textDecoration: "none" }}
             >
-              Stack
+              about
             </Link>
           </Button>
           <Button color="inherit">

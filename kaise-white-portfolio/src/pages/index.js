@@ -7,16 +7,14 @@ import GatsbyLogo from "../../static/stack/Gatsby-Monogram.svg"
 import MaterialUILogo from "../../static/stack/Material-UI.svg"
 import ReactLogo from "../../static/stack/react-native.svg"
 import JavaScriptLogo from "../../static/stack/JavaScript.svg"
-import NetlifyLogo from "../../static/stack/Netlify.png"
 import FramerMotionLogo from "../../static/stack/framer-motion.png"
-import AWSLogo from "../../static/stack/AWS.png"
-import GithubLogo from "../../static/stack/Github.svg"
-import GoogleLogo from "../../static/stack/google.svg"
+
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
 
 import { Link } from "gatsby"
 import Header from "../components/header"
+import Footer from "../components/footer"
 import { motion } from "framer-motion"
 
 import "../styles.css"
@@ -192,7 +190,7 @@ const Index = () => {
           }}
         >
           <Typography style={{ color: "#FFF" }}>
-            I specialize in Full Stack development in addition to UX/UX design
+            I specialize in full-stack development in addition to UX/UX design
             in order to bring brilliant digital ideas into being.
           </Typography>
         </Parallax.Layer>
@@ -226,6 +224,7 @@ const Index = () => {
             style={{ width: "40%", transform: props.xys.interpolate(trans) }}
           />
         </Parallax.Layer>
+        <Footer></Footer>
       </Parallax>
     </div>
   )

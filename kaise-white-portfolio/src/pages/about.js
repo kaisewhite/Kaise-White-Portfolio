@@ -22,6 +22,7 @@ import FirebaseLogo from "../../static/stack/firebase.svg"
 import CSSLogo from "../../static/stack/css.svg"
 //import WindowsLogo from "../../static/stack/windows.png"
 import UbuntuLogo from "../../static/stack/ubuntu.svg"
+import Footer from "../components/footer"
 
 import { Link } from "gatsby"
 import Header from "../components/header"
@@ -87,15 +88,15 @@ const Index = () => {
   const [logosThirdRow, setlogosThirdRow] = useState(ThirdRow)
 
   useEffect(() => {
-    setTimeout(() => setlogosFirstRow(shuffle(logosFirstRow)), 5000)
+    //setTimeout(() => setlogosFirstRow(shuffle(logosFirstRow)), 5000)
   }, [logosFirstRow])
 
   useEffect(() => {
-    setTimeout(() => setlogosSecondRow(shuffle(logosSecondRow)), 6000)
+    //setTimeout(() => setlogosSecondRow(shuffle(logosSecondRow)), 6000)
   }, [logosSecondRow])
 
   useEffect(() => {
-    setTimeout(() => setlogosThirdRow(shuffle(logosThirdRow)), 7000)
+    //setTimeout(() => setlogosThirdRow(shuffle(logosThirdRow)), 7000)
   }, [logosThirdRow])
 
   /************************** END - Hook for Animated Objects *********************** */
@@ -114,7 +115,7 @@ const Index = () => {
 
       {/********************************************************************************* */}
       <Parallax
-        pages={2}
+        pages={2.3}
         style={{
           backgroundColor: "#141821",
           backgroundImage: url("stars", true),
@@ -124,14 +125,36 @@ const Index = () => {
         <Parallax.Layer
           offset={1}
           speed={1}
-          style={{ backgroundColor: "#FFF" }} //805E73
+          style={{
+            backgroundColor: "#87BCDE",
+            backgroundImage: url("stars", true),
+          }} //805E73
         />
-
         <Parallax.Layer
-          offset={0.9}
+          offset={1.7}
+          speed={1}
+          style={{
+            backgroundColor: "#87BCDE",
+            backgroundImage: url("stars", true),
+          }} //805E73
+        />
+        <Parallax.Layer
+          offset={0}
           speed={0.1}
           style={{
             display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1 style={{ marginBottom: "30%", color: "#FFF" }}>ABOUT</h1>
+        </Parallax.Layer>
+        <Parallax.Layer
+          offset={0}
+          speed={0.1}
+          style={{
+            display: "flex",
+
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -145,12 +168,13 @@ const Index = () => {
                 width: "5%",
                 marginLeft: "2.5%",
                 marginRight: "2.5%",
+                marginBottom: "10%",
               }}
             />
           ))}
         </Parallax.Layer>
         <Parallax.Layer
-          offset={1}
+          offset={0.2}
           speed={0.1}
           style={{
             display: "flex",
@@ -169,13 +193,13 @@ const Index = () => {
                 width: "5%",
                 marginLeft: "2.5%",
                 marginRight: "2.5%",
+                marginBottom: "10%",
               }}
             />
           ))}
         </Parallax.Layer>
-
         <Parallax.Layer
-          offset={1.2}
+          offset={0.4}
           speed={0.1}
           style={{
             display: "flex",
@@ -192,13 +216,14 @@ const Index = () => {
                 width: "5%",
                 marginLeft: "2.5%",
                 marginRight: "2.5%",
+                marginBottom: "10%",
               }}
             />
           ))}
         </Parallax.Layer>
-
+        {/************************************** TEXT ***************************************** */}
         <Parallax.Layer
-          offset={0}
+          offset={1.15}
           speed={-0.3}
           style={{
             //backgroundSize: "80%",
@@ -210,7 +235,8 @@ const Index = () => {
         >
           <div
             style={{
-              color: "black",
+              color: "white",
+
               marginLeft: "20%",
               marginRight: "20%",
               display: "flex",
@@ -220,11 +246,24 @@ const Index = () => {
           >
             <p style={{ color: "#FFF" }}>
               {" "}
-              This particular website was build using a combination libraries.
-              This particular website was build using a combination libraries.
-              This particular website was build using a combination libraries.
-              This particular website was build using a combination libraries.
+              I'm a full-stack software engineer with finely honed development
+              and leadership skills. I started in databases and back-end
+              development then pivoted into full-stack to gain a better
+              understanding on architecture and how these different systems work
+              together.
             </p>
+            <p style={{ color: "#FFF" }}>
+              {" "}
+              All told, I have over 10 years of professional software
+              engineering experience total spanning a large range of
+              technologies -- everything including mobile, web, scalable
+              backends, data processing, and databases. This website was built
+              using JS, ReactJS, GatsbyJS, Material-UI, Framer Motion,
+              React-Spring & Netlify. These are a few the other tools I use on a
+              daily basis:
+            </p>
+
+            {/********************* First Row of UL (unordered list) *************** */}
             <div
               style={{
                 display: "flex",
@@ -233,13 +272,14 @@ const Index = () => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 color: "#FFF",
+                fontSize: 10,
               }}
             >
               <div
                 style={{
                   flexDirection: "column",
                   marginRight: "10%",
-                  width: 250,
+                  width: 300,
                 }}
               >
                 <h3>Front End</h3>
@@ -256,7 +296,7 @@ const Index = () => {
                 style={{
                   flexDirection: "column",
                   marginLeft: "10%",
-                  width: 250,
+                  width: 300,
                 }}
               >
                 <h3>Back End</h3>
@@ -270,8 +310,107 @@ const Index = () => {
                 </ul>
               </div>
             </div>
+            {/********************* Second Row *************** */}
+            <div
+              style={{
+                display: "flex",
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                color: "#FFF",
+                fontSize: 10,
+              }}
+            >
+              <div
+                style={{
+                  flexDirection: "column",
+                  marginRight: "10%",
+                  width: 300,
+                }}
+              >
+                <h3>Cloud</h3>
+                <ul style={{ paddingLeft: "15%" }}>
+                  <li>
+                    AWS: IAM, Cognito, EC2, RDS, S3, Lambda, CloudWatch, Amplify
+                  </li>
+                  <li>
+                    Google Cloud: Cloud SQL, Cloud Storage, Cloud Functions
+                  </li>
+                  <li>Firebase: Auth, Firestore, Storage, Functions</li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                </ul>
+              </div>
+              <div
+                style={{
+                  flexDirection: "column",
+                  marginLeft: "10%",
+                  width: 300,
+                }}
+              >
+                <h3>Databases</h3>
+                <ul style={{ paddingLeft: "15%" }}>
+                  <li>Microsoft SQL Server</li>
+                  <li>MySQL</li>
+                  <li>MongoDB</li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                </ul>
+              </div>
+            </div>
+            {/********************* Third Row *************** */}
+            <div
+              style={{
+                display: "flex",
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                color: "#FFF",
+                fontSize: 10,
+              }}
+            >
+              <div
+                style={{
+                  flexDirection: "column",
+                  marginRight: "10%",
+                  width: 300,
+                }}
+              >
+                <h3>Dev Ops</h3>
+                <ul style={{ paddingLeft: "15%" }}>
+                  <li>GitHub</li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                </ul>
+              </div>
+              <div
+                style={{
+                  flexDirection: "column",
+                  marginLeft: "10%",
+                  width: 300,
+                }}
+              >
+                <h3>Languages</h3>
+                <ul style={{ paddingLeft: "15%" }}>
+                  <li>JavaScript</li>
+                  <li>T-SQL</li>
+                  <li>Python</li>
+                  <li>Bash/Shell</li>
+                  <li>PowerShell</li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li style={{ color: "transparent" }}> Empty </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </Parallax.Layer>
+        <Footer></Footer>
       </Parallax>
     </div>
   )

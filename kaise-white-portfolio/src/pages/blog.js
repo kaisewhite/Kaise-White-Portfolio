@@ -1,10 +1,11 @@
 import React from "react"
-import Header from "../components/header"
+import Layout from "../components/layout"
 
 export default function Blog() {
   return (
-    <div>
-      <Header></Header>
-    </div>
+    <Layout>
+      <h1>Blog</h1>
+      <p>This is a work in progress......</p>
+    </Layout>
   )
 }
