@@ -8,6 +8,7 @@ import MaterialUILogo from "../../static/stack/Material-UI.svg"
 import ReactLogo from "../../static/stack/react-native.svg"
 import JavaScriptLogo from "../../static/stack/JavaScript.svg"
 import FramerMotionLogo from "../../static/stack/framer-motion.png"
+import Floating from "../components/floatingIcons"
 
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
@@ -167,13 +168,15 @@ const Index = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-between",
+              alignItems: "center",
             }}
-          ></div>
+          >
+            <Floating></Floating>
+          </div>
         </Parallax.Layer>
 
         <Parallax.Layer
-          offset={0.2}
+          offset={0.1}
           speed={-0.3}
           style={{
             backgroundSize: "80%",
