@@ -18,3 +18,13 @@ ul {
 .script-bf-box:hover {
   background: hotpink;
 }
+
+.nav-item:hover {
+  color: red;
+}
+
+/**
+* {
+  color: red;
+}
+*/

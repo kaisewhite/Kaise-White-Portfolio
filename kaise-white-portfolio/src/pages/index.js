@@ -12,12 +12,10 @@ import FramerMotionLogo from "../../static/stack/framer-motion.png"
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
 
-import { Link } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { motion } from "framer-motion"
 
-import "../styles.css"
 import { Typography } from "@material-ui/core"
 
 const url = (name, wrap = false) =>
@@ -156,26 +154,22 @@ const Index = () => {
         </Parallax.Layer>
 
         <Parallax.Layer
-          offset={0}
+          offset={-0.15}
           speed={0.1}
           style={{
             display: "flex",
+
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          {logos.map(source => (
-            <motion.img
-              key={source}
-              src={source}
-              layoutTransition={spring}
-              style={{
-                width: "5%",
-                marginLeft: "2.5%",
-                marginRight: "2.5%",
-              }}
-            />
-          ))}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          ></div>
         </Parallax.Layer>
 
         <Parallax.Layer
@@ -189,10 +183,25 @@ const Index = () => {
             justifyContent: "center",
           }}
         >
-          <Typography style={{ color: "#FFF" }}>
-            I specialize in full-stack development in addition to UX/UX design
-            in order to bring brilliant digital ideas into being.
-          </Typography>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              style={{ color: "#FFF", fontSize: 44, fontWeight: 800 }}
+            >
+              How you get there matters
+            </Typography>
+
+            <Typography
+              style={{ color: "#FFF", fontSize: 24, fontWeight: 800 }}
+            >
+              In the right hands, your brand and business go further
+            </Typography>
+          </div>
         </Parallax.Layer>
 
         <Parallax.Layer

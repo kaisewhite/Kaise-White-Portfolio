@@ -88,15 +88,15 @@ const Index = () => {
   const [logosThirdRow, setlogosThirdRow] = useState(ThirdRow)
 
   useEffect(() => {
-    //setTimeout(() => setlogosFirstRow(shuffle(logosFirstRow)), 5000)
+    setTimeout(() => setlogosFirstRow(shuffle(logosFirstRow)), 5000)
   }, [logosFirstRow])
 
   useEffect(() => {
-    //setTimeout(() => setlogosSecondRow(shuffle(logosSecondRow)), 6000)
+    setTimeout(() => setlogosSecondRow(shuffle(logosSecondRow)), 6000)
   }, [logosSecondRow])
 
   useEffect(() => {
-    //setTimeout(() => setlogosThirdRow(shuffle(logosThirdRow)), 7000)
+    setTimeout(() => setlogosThirdRow(shuffle(logosThirdRow)), 7000)
   }, [logosThirdRow])
 
   /************************** END - Hook for Animated Objects *********************** */
@@ -353,7 +353,7 @@ const Index = () => {
                   <li>Microsoft SQL Server</li>
                   <li>MySQL</li>
                   <li>MongoDB</li>
-                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li>Firestore</li>
                   <li style={{ color: "transparent" }}> Empty </li>
                   <li style={{ color: "transparent" }}> Empty </li>
                 </ul>
@@ -381,7 +381,7 @@ const Index = () => {
                 <h3>Dev Ops</h3>
                 <ul style={{ paddingLeft: "15%" }}>
                   <li>GitHub</li>
-                  <li style={{ color: "transparent" }}> Empty </li>
+                  <li>AWS CodeCommit</li>
                   <li style={{ color: "transparent" }}> Empty </li>
                   <li style={{ color: "transparent" }}> Empty </li>
                   <li style={{ color: "transparent" }}> Empty </li>

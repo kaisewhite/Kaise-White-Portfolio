@@ -6,7 +6,13 @@ const Layout = props => {
   return (
     <div>
       <Header></Header>
-      <div style={{ marginTop: "10%" }}>{props.children}</div>
+      <div
+        style={{
+          marginTop: "10%",
+        }}
+      >
+        {props.children}
+      </div>
       <Footer></Footer>
     </div>
   )

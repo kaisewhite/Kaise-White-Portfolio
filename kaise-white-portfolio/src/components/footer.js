@@ -1,35 +1,74 @@
 import React from "react"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
+import { useState, useEffect } from "react"
+import { useWindowSize } from "../helpers/index"
 
-import Button from "@material-ui/core/Button"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Footer = () => {
+  const size = useWindowSize()
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          author
+        }
+      }
+    }
+  `)
+
   return (
-    <footer style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
+    <footer
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        flexDirection: "row",
+        display: "flex",
+      }}
+    >
       <CssBaseline />
 
       <div
-        /** Menu Bar */
         style={{
-          backgroundColor: "#141821",
-          //backgroundImage: url("stars", true),
-          backgroundSize: "cover",
+          width: size.width * 0.3,
+          height: 100,
+          backgroundColor: "red",
+        }}
+      ></div>
+      <div
+        style={{
+          width: size.width * 0.4,
+          height: 100,
+          backgroundColor: "blue",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Toolbar>
-          <Typography style={{ marginRight: "auto" }} variant="h4">
-            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-              K / W
-            </Link>
-          </Typography>
-        </Toolbar>
+        <Typography style={{ fontSize: 10 }}>
+          ©2020 Created by Kaise White. All rights reserved.
+        </Typography>
       </div>
+      <div
+        style={{
+          width: size.width * 0.3,
+          height: 100,
+          backgroundColor: "green",
+        }}
+      ></div>
     </footer>
   )
 }
 
 export default Footer
+
+/** Menu Bar */
+//backgroundColor: "#141821",
+//backgroundImage: url("stars", true),
+//backgroundSize: "cover",

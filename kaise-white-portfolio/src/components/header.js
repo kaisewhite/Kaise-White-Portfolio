@@ -5,9 +5,19 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 
 import Button from "@material-ui/core/Button"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <header>
       <CssBaseline />
@@ -23,7 +33,7 @@ const Header = () => {
         <Toolbar>
           <Typography style={{ marginRight: "auto" }} variant="h4">
             <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-              K / W
+              {data.site.siteMetadata.title}
             </Link>
           </Typography>
           {/** <img src={Logo} style={{ width: "5%", margin: "1%" }}></img> */}
