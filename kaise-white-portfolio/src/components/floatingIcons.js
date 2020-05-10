@@ -13,19 +13,26 @@ import { Frame } from "framer"
 
 const Floating = () => {
   const size = useWindowSize()
-  const mLeft = 10
-  const mRight = 10
-  const imageWidth = "10%"
+
   const transition = {
     loop: Infinity,
     duration: 5,
     ease: "linear",
   }
+
+  const firebaseAnimation = [100, 80, 60, 40, 20, 0, 20, 40, 60, 80, 100]
+  const javascriptAnimation = [80, 60, 40, 20, 0, 20, 40, 60, 80, 100, 80]
+  const typescriptAnimation = [60, 40, 20, 0, 20, 40, 60, 80, 100, 80, 60]
+  const framermotionAnimation = [40, 20, 0, 20, 40, 60, 80, 100, 80, 60, 40]
+  const gatsbyAnimation = [20, 0, 20, 40, 60, 80, 100, 80, 60, 40, 20]
+  const reactAnimation = [0, 20, 40, 60, 80, 100, 80, 60, 40, 20, 0]
+  const materialAnimation = [20, 0, 20, 40, 60, 80, 100, 80, 60, 40, 20]
+
   return (
     <div
       style={{
         //backgroundColor: "#FFF",
-        height: 100,
+        height: 200,
         width: size.width * 0.6,
         display: "flex",
         flexDirection: "row",
@@ -35,155 +42,73 @@ const Floating = () => {
     >
       <motion.img
         animate={{
-          y: [40, 50, 40, 30, 20, 10, 0, 10, 20, 30, 40],
+          y: firebaseAnimation,
         }}
         transition={transition}
         src={FirebaseLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
 
       <motion.img
-        animate={{ y: [0, 10, 20, 30, 40, 50, 40, 30, 20, 10, 0] }}
+        animate={{ y: javascriptAnimation }}
         transition={{
           loop: Infinity,
           duration: 5,
           ease: "linear",
         }}
         src={JavaScriptLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
       <motion.img
         animate={{
-          y: [20, 30, 40, 50, 40, 30, 20, 10, 0, 10, 20],
+          y: typescriptAnimation,
         }}
         transition={transition}
         src={TypescriptLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
       <motion.img
         animate={{
-          y: [40, 50, 40, 30, 20, 10, 0, 10, 20, 30, 40],
+          y: framermotionAnimation,
         }}
         transition={transition}
         src={FramerMotionLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
       <motion.img
         animate={{
-          y: [60, 50, 40, 30, 20, 10, 0, 10, 20, 30, 40, 50, 60],
+          y: gatsbyAnimation,
         }}
         transition={transition}
         src={GatsbyLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
       <motion.img
         animate={{
-          y: [40, 50, 40, 30, 20, 10, 0, 10, 20, 30, 40],
+          y: materialAnimation,
         }}
         transition={transition}
         src={MaterialUILogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
       <motion.img
         animate={{
-          y: [60, 50, 40, 30, 20, 10, 0, 10, 20, 30, 40, 50, 60],
+          y: reactAnimation,
         }}
         transition={transition}
         src={ReactLogo}
-        style={{ width: imageWidth, marginLeft: mLeft, marginRight: mRight }}
+        style={styles.img}
       ></motion.img>
     </div>
   )
 }
 
-/** style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }} */
 export default Floating
 
-/** <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={JavaScriptLogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div>
-      <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={ReactLogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div>
-      <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={MaterialUILogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div>
-      <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={GatsbyLogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div>
-      <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={FirebaseLogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div>
-      <div style={{ marginLeft: marginLeft, marginRight: marginRight }}>
-        <Frame
-          animate={{ y: [30, 20, 10, 0, 10, 20, 30, 40, 50, 40, 30, 20, 30] }}
-          transition={{
-            loop: Infinity,
-            duration: 5,
-            ease: "linear",
-          }}
-          size={50}
-          background={"transparent"}
-        >
-          <img src={TypescriptLogo} style={{ width: imageWidth }}></img>
-        </Frame>
-      </div> */
+const styles = {
+  img: {
+    width: "10%",
+    marginLeft: 10,
+    marginRight: 10,
+  },
+}
