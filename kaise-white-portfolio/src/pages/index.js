@@ -3,15 +3,28 @@ import { Parallax } from "react-spring/renderprops-addons"
 import { useSpring, animated } from "react-spring"
 import { useState, useEffect } from "react"
 import { shuffle } from "lodash"
+import Floating from "../components/floatingIcons"
+import JavaScriptLogo from "../../static/stack/JavaScript.svg"
+
+import JavaScriptBackground from "../../static/JavascriptBackground.png"
+import AWSLogo from "../../static/stack/AWS.png"
+import GCPlogo from "../../static/stack/GCP.png"
+import NPMLogo from "../../static/stack/npm.svg"
 import GatsbyLogo from "../../static/stack/Gatsby-Monogram.svg"
 import MaterialUILogo from "../../static/stack/Material-UI.svg"
 import ReactLogo from "../../static/stack/react-native.svg"
-import JavaScriptLogo from "../../static/stack/JavaScript.svg"
+import NetlifyLogo from "../../static/stack/netlify.png"
 import FramerMotionLogo from "../../static/stack/framer-motion.png"
-import Floating from "../components/floatingIcons"
-
-import FirebaseLogo from "../../static/stack/firebase.svg"
+import GithubLogo from "../../static/stack/Github.svg"
+import MSSQLLogo from "../../static/stack/MSSQL.svg"
+import NodeLogo from "../../static/stack/Node.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
+import PythonLogo from "../../static/stack/python.svg"
+import HTMLLogo from "../../static/stack/html.svg"
+import FirebaseLogo from "../../static/stack/firebase.svg"
+import CSSLogo from "../../static/stack/css.svg"
+//import WindowsLogo from "../../static/stack/windows.png"
+import UbuntuLogo from "../../static/stack/ubuntu.svg"
 
 import Header from "../components/header"
 import Footer from "../components/footer"
@@ -26,51 +39,23 @@ const url = (name, wrap = false) =>
     wrap ? ")" : ""
   }`
 
-const spring = {
-  type: "spring",
-  damping: 40000,
-  stiffness: 500,
-  mass: 10,
-}
-
-/************************** START - Calculations for Animated Objects *********************** */
-const calc = (x, y) => [
-  -(y - window.innerHeight / 2) / 20,
-  (x - window.innerWidth / 2) / 20,
-  1.1,
-]
-const trans = (x, y, s) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-/************************** END - Calculations for Animated Objects *********************** */
-
 const Index = () => {
-  /************************** START - Hook for Animated Objects *********************** */
-  const initialLogos = [
-    //GoogleLogo,
-    JavaScriptLogo,
-    GatsbyLogo,
-    ReactLogo,
-    MaterialUILogo,
-    FirebaseLogo,
-    FramerMotionLogo,
-    TypescriptLogo,
-  ]
+  /************************** - BEGIN - Animations *********************** */
+  const transition = {
+    loop: Infinity,
+    duration: 50,
+    ease: "linear",
+  }
 
-  const [logos, setLogos] = useState(initialLogos)
+  const HTMLAnimation = [0, 400, 0]
+  const JSAnimation = [0, 300, 0]
+  const UbuntuAnimation = [0, -300, 0]
+  const MaterialUIAnimation = [0, -300, 0]
+  const GatsbyAnimation = [0, -200, 0]
+  const FirebaseAnimation = [0, -600, 0]
+  const NodeAnimation = [0, -400]
 
-  useEffect(() => {
-    setTimeout(() => setLogos(shuffle(logos)), 2000)
-  }, [logos])
-
-  /************************** END - Hook for Animated Objects *********************** */
-
-  /************************** START - Hook for Animated Objects *********************** */
-
-  const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1],
-    config: { mass: 5, tension: 350, friction: 40 },
-  }))
-  /************************** END - Hook for Animated Objects *********************** */
+  /************************** END - Animations *********************** */
 
   return (
     <div style={{ backgroundColor: "#141821" }}>
@@ -78,20 +63,16 @@ const Index = () => {
 
       {/********************************************************************************* */}
       <Parallax
-        pages={3}
+        pages={2}
         style={{
           backgroundColor: "#141821",
-          backgroundImage: url("stars", true),
-          backgroundSize: "auto",
+          backgroundImage: `url("${JavaScriptBackground}")`,
+          //backgroundImage: url("stars", true),
+          backgroundSize: "cover",
         }}
       >
         <Parallax.Layer
           offset={1}
-          speed={1}
-          style={{ backgroundColor: "#805E73" }}
-        />
-        <Parallax.Layer
-          offset={2}
           speed={1}
           style={{ backgroundColor: "#87BCDE" }}
         />
@@ -104,53 +85,97 @@ const Index = () => {
             // backgroundImage: url("stars", true),
             backgroundSize: "cover",
           }}
-        ></Parallax.Layer>
-
-        <Parallax.Layer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "20%", marginLeft: "55%" }}
+        >
+          <motion.img
+            animate={{
+              y: HTMLAnimation,
+            }}
+            transition={transition}
+            src={HTMLLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "5%",
+              opacity: 0.1,
+            }}
           />
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "10%", marginLeft: "15%" }}
+          <motion.img
+            animate={{
+              y: JSAnimation,
+            }}
+            transition={transition}
+            src={JavaScriptLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "15%",
+              opacity: 0.1,
+            }}
           />
-        </Parallax.Layer>
-
-        <Parallax.Layer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "20%", marginLeft: "70%" }}
+          <motion.img
+            animate={{
+              y: UbuntuAnimation,
+            }}
+            transition={transition}
+            src={UbuntuLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "30%",
+              opacity: 0.1,
+            }}
           />
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "20%", marginLeft: "40%" }}
+          <motion.img
+            animate={{
+              y: MaterialUIAnimation,
+            }}
+            transition={transition}
+            src={MaterialUILogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "45%",
+              opacity: 0.1,
+            }}
           />
-        </Parallax.Layer>
-
-        <Parallax.Layer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "10%", marginLeft: "10%" }}
+          <motion.img
+            animate={{
+              y: GatsbyAnimation,
+            }}
+            transition={transition}
+            src={GatsbyLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "60%",
+              opacity: 0.1,
+            }}
           />
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "20%", marginLeft: "75%" }}
+          <motion.img
+            animate={{
+              y: FirebaseAnimation,
+            }}
+            transition={transition}
+            src={FirebaseLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "75%",
+              opacity: 0.1,
+            }}
           />
-        </Parallax.Layer>
-
-        <Parallax.Layer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "20%", marginLeft: "60%" }}
-          />
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "25%", marginLeft: "30%" }}
-          />
-          <img
-            src={url("cloud")}
-            style={{ display: "block", width: "10%", marginLeft: "80%" }}
+          <motion.img
+            animate={{
+              y: NodeAnimation,
+            }}
+            transition={transition}
+            src={NodeLogo}
+            style={{
+              display: "block",
+              width: "20%",
+              marginLeft: "85%",
+              opacity: 0.1,
+            }}
           />
         </Parallax.Layer>
 
@@ -171,12 +196,12 @@ const Index = () => {
               alignItems: "center",
             }}
           >
-            <Floating></Floating>
+            {/** <Floating></Floating> */}
           </div>
         </Parallax.Layer>
 
         <Parallax.Layer
-          offset={0.1}
+          offset={0}
           speed={-0.3}
           style={{
             backgroundSize: "80%",
@@ -193,22 +218,37 @@ const Index = () => {
               alignItems: "center",
             }}
           >
-            <Typography
-              style={{ color: "#FFF", fontSize: 44, fontWeight: 800 }}
-            >
-              How you get there matters
-            </Typography>
+            <div style={{ flexDirection: "row", display: "flex" }}>
+              <Typography style={{ color: "#FFF", fontSize: 44 }}>
+                Hello, I'm
+              </Typography>
 
-            <Typography
-              style={{ color: "#FFF", fontSize: 24, fontWeight: 800 }}
+              <Typography
+                style={{ color: "#e31b6d", fontSize: 44, marginLeft: 10 }}
+              >
+                Kaise White
+              </Typography>
+              <Typography style={{ color: "#FFF", fontSize: 44 }}>.</Typography>
+            </div>
+            <div
+              style={{
+                flexDirection: "column",
+                display: "flex",
+                alignItems: "center",
+              }}
             >
-              In the right hands, your brand and business go further
-            </Typography>
+              <Typography style={{ color: "#FFF", fontSize: 24 }}>
+                I'm a full-stack developer with a passion for designing
+              </Typography>
+              <Typography style={{ color: "#FFF", fontSize: 24 }}>
+                beautiful and functional user experiences.
+              </Typography>
+            </div>
           </div>
         </Parallax.Layer>
 
         <Parallax.Layer
-          offset={2}
+          offset={1}
           speed={-0.3}
           style={{
             backgroundSize: "80%",
@@ -218,7 +258,7 @@ const Index = () => {
         ></Parallax.Layer>
 
         <Parallax.Layer
-          offset={2}
+          offset={1}
           speed={-0}
           style={{
             display: "flex",
@@ -227,14 +267,7 @@ const Index = () => {
           }}
           onClick={() => {}}
         >
-          <animated.img
-            src={url("clients-main")}
-            onMouseMove={({ clientX: x, clientY: y }) =>
-              set({ xys: calc(x, y) })
-            }
-            onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ width: "40%", transform: props.xys.interpolate(trans) }}
-          />
+          <img src={url("clients-main")} style={{ width: "40%" }} />
         </Parallax.Layer>
         <Footer></Footer>
       </Parallax>
