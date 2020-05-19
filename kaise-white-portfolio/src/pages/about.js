@@ -24,12 +24,12 @@ import CSSLogo from "../../static/stack/css.svg"
 import UbuntuLogo from "../../static/stack/ubuntu.svg"
 import Footer from "../components/footer"
 
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import Header from "../components/header"
 import { motion } from "framer-motion"
 
 import "../styles.css"
-import { Typography } from "@material-ui/core"
+//import { Typography } from "@material-ui/core"
 
 const url = (name, wrap = false) =>
   `${
