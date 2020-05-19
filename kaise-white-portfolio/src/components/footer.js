@@ -38,20 +38,20 @@ const Footer = () => {
         style={{
           width: size.width * 0.3,
           height: 100,
-          backgroundColor: "red",
+          backgroundColor: "#141821",
         }}
       ></div>
       <div
         style={{
           width: size.width * 0.4,
           height: 100,
-          backgroundColor: "blue",
+          backgroundColor: "#141821",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Typography style={{ fontSize: 10 }}>
+        <Typography style={{ fontSize: 10, color: "#FFF" }}>
           ©2020 Created by Kaise White. All rights reserved.
         </Typography>
       </div>
@@ -59,7 +59,7 @@ const Footer = () => {
         style={{
           width: size.width * 0.3,
           height: 100,
-          backgroundColor: "green",
+          backgroundColor: "#141821",
         }}
       ></div>
     </footer>

@@ -1,36 +1,36 @@
 import React from "react"
 import { Parallax } from "react-spring/renderprops-addons"
-import { useSpring, animated } from "react-spring"
-import { useState, useEffect } from "react"
-import { shuffle } from "lodash"
+
 import Floating from "../components/floatingIcons"
 import JavaScriptLogo from "../../static/stack/JavaScript.svg"
 
 import JavaScriptBackground from "../../static/JavascriptBackground.png"
-import AWSLogo from "../../static/stack/AWS.png"
-import GCPlogo from "../../static/stack/GCP.png"
 import NPMLogo from "../../static/stack/npm.svg"
 import GatsbyLogo from "../../static/stack/Gatsby-Monogram.svg"
 import MaterialUILogo from "../../static/stack/Material-UI.svg"
-import ReactLogo from "../../static/stack/react-native.svg"
-import NetlifyLogo from "../../static/stack/netlify.png"
 import FramerMotionLogo from "../../static/stack/framer-motion.png"
-import GithubLogo from "../../static/stack/Github.svg"
-import MSSQLLogo from "../../static/stack/MSSQL.svg"
 import NodeLogo from "../../static/stack/Node.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
-import PythonLogo from "../../static/stack/python.svg"
 import HTMLLogo from "../../static/stack/html.svg"
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import CSSLogo from "../../static/stack/css.svg"
-//import WindowsLogo from "../../static/stack/windows.png"
-import UbuntuLogo from "../../static/stack/ubuntu.svg"
+
+import Card from "@material-ui/core/Card"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
+import Radio from "@material-ui/core/Radio"
+import RadioGroup from "@material-ui/core/RadioGroup"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import FormControl from "@material-ui/core/FormControl"
+import FormLabel from "@material-ui/core/FormLabel"
+
+import { useWindowSize } from "../helpers/index"
 
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { motion } from "framer-motion"
-
-import { Typography } from "@material-ui/core"
 
 const url = (name, wrap = false) =>
   `${
@@ -40,6 +40,7 @@ const url = (name, wrap = false) =>
   }`
 
 const Index = () => {
+  const size = useWindowSize()
   /************************** - BEGIN - Animations *********************** */
   const transition = {
     loop: Infinity,
@@ -48,12 +49,19 @@ const Index = () => {
   }
 
   const HTMLAnimation = [0, 400, 0]
-  const JSAnimation = [0, 300, 0]
-  const UbuntuAnimation = [0, -300, 0]
-  const MaterialUIAnimation = [0, -300, 0]
-  const GatsbyAnimation = [0, -200, 0]
-  const FirebaseAnimation = [0, -600, 0]
-  const NodeAnimation = [0, -400]
+  const JSAnimation = [120, 520, 120]
+
+  const MaterialAnimation = [300, -100, 300]
+  const NPMAnimation = [-100, -500, -100]
+
+  const NodeAnimation = [-400, 0, -400]
+  const TSAnimation = [-200, 200, -200]
+
+  const GatsbyAnimation = [-500, -1000, -500]
+  const CSSAnimation = [-100, -500, -100]
+
+  const FirebaseAnimation = [-1000, -500, -1000]
+  const FramerAnimation = [-800, -300, -800]
 
   /************************** END - Animations *********************** */
 
@@ -108,33 +116,72 @@ const Index = () => {
             style={{
               display: "block",
               width: "10%",
-              marginLeft: "15%",
+              marginLeft: "5%",
               opacity: 0.1,
             }}
           />
           <motion.img
             animate={{
-              y: UbuntuAnimation,
-            }}
-            transition={transition}
-            src={UbuntuLogo}
-            style={{
-              display: "block",
-              width: "10%",
-              marginLeft: "30%",
-              opacity: 0.1,
-            }}
-          />
-          <motion.img
-            animate={{
-              y: MaterialUIAnimation,
+              y: MaterialAnimation,
             }}
             transition={transition}
             src={MaterialUILogo}
             style={{
               display: "block",
               width: "10%",
-              marginLeft: "45%",
+              marginLeft: "25%",
+              opacity: 0.1,
+            }}
+          />
+          <motion.img
+            animate={{
+              y: NPMAnimation,
+            }}
+            transition={transition}
+            src={NPMLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "25%",
+              opacity: 0.1,
+            }}
+          />
+          <motion.img
+            animate={{
+              y: NodeAnimation,
+            }}
+            transition={transition}
+            src={NodeLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "50%",
+              opacity: 0.1,
+            }}
+          />
+          <motion.img
+            animate={{
+              y: TSAnimation,
+            }}
+            transition={transition}
+            src={TypescriptLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "50%",
+              opacity: 0.1,
+            }}
+          />
+          <motion.img
+            animate={{
+              y: CSSAnimation,
+            }}
+            transition={transition}
+            src={CSSLogo}
+            style={{
+              display: "block",
+              width: "10%",
+              marginLeft: "65%",
               opacity: 0.1,
             }}
           />
@@ -147,7 +194,7 @@ const Index = () => {
             style={{
               display: "block",
               width: "10%",
-              marginLeft: "60%",
+              marginLeft: "65%",
               opacity: 0.1,
             }}
           />
@@ -160,19 +207,19 @@ const Index = () => {
             style={{
               display: "block",
               width: "10%",
-              marginLeft: "75%",
+              marginLeft: "85%",
               opacity: 0.1,
             }}
           />
           <motion.img
             animate={{
-              y: NodeAnimation,
+              y: FramerAnimation,
             }}
             transition={transition}
-            src={NodeLogo}
+            src={FramerMotionLogo}
             style={{
               display: "block",
-              width: "20%",
+              width: "10%",
               marginLeft: "85%",
               opacity: 0.1,
             }}
@@ -267,7 +314,62 @@ const Index = () => {
           }}
           onClick={() => {}}
         >
-          <img src={url("clients-main")} style={{ width: "40%" }} />
+          {/** <img src={url("clients-main")} style={{ width: "40%" }} /> */}
+          <Card
+            style={{
+              height: size.height * 0.4,
+              width: size.width * 0.45,
+              borderRadius: 10,
+            }}
+          >
+            <CardContent
+              style={{
+                backgroundColor: "#d8d8d8",
+                height: size.height * 0.06,
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Radio
+                disabled
+                style={{
+                  color: "#ff483f",
+                  backgroundColor: "#ff483f",
+                  height: size.height * 0.005,
+                  width: size.width * 0.005,
+                  marginTop: 5,
+                  marginRight: 5,
+                }}
+              ></Radio>
+              <Radio
+                disabled
+                style={{
+                  color: "#ecbb38",
+                  backgroundColor: "#ecbb38",
+                  height: size.height * 0.005,
+                  width: size.width * 0.005,
+                  marginTop: 5,
+                  marginRight: 5,
+                  marginLeft: 5,
+                }}
+              ></Radio>
+              <Radio
+                disabled
+                style={{
+                  color: "#36d3a8",
+                  backgroundColor: "#36d3a8",
+                  height: size.height * 0.005,
+                  width: size.width * 0.005,
+                  marginTop: 5,
+                  marginRight: 5,
+                  marginLeft: 5,
+                }}
+              ></Radio>
+            </CardContent>
+            <CardContent>
+              <Typography>About Me</Typography>
+            </CardContent>
+          </Card>
         </Parallax.Layer>
         <Footer></Footer>
       </Parallax>
