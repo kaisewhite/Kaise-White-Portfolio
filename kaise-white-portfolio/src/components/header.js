@@ -9,142 +9,40 @@ import Button from "@material-ui/core/Button"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { red, blue, green } from "@material-ui/core/colors"
 import { AutoRotatingCarousel, Slide } from "material-auto-rotating-carousel"
+import Logo from "../../static/Logo.svg"
 
 //import Button from "@material-ui/core/Button"
 import { Link, graphql, useStaticQuery } from "gatsby"
-
-const AutoRotatingCarouselModal = ({ handleOpen, setHandleOpen, isMobile }) => {
-  return (
-    <div>
-      {/* <Button onClick={() => setHandleOpen({ open: true })}>Open carousel</Button> */}
-      <AutoRotatingCarousel
-        //label="Get started"
-        open={handleOpen.open}
-        //open={true}
-        onClose={() => setHandleOpen({ open: false })}
-        onStart={() => setHandleOpen({ open: false })}
-        autoplay={false}
-        mobile={isMobile}
-        style={{ position: "absolute", height: 200, width: 200 }}
-      >
-        <Slide
-          media={
-            <img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png" />
-          }
-          mediaBackgroundStyle={{ backgroundColor: red[400] }}
-          style={{ backgroundColor: red[600] }}
-          title="Coming Soon..."
-          subtitle={
-            <Button variant="contained" color="primary">
-              <Link
-                to="/services"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                See Details
-              </Link>
-            </Button>
-          }
-        />
-        <Slide
-          media={
-            <img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png" />
-          }
-          mediaBackgroundStyle={{ backgroundColor: blue[400] }}
-          style={{ backgroundColor: blue[600] }}
-          title="Coming Soon..."
-          subtitle={
-            <Button variant="contained" color="primary">
-              <Link
-                to="/services"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                See Details
-              </Link>
-            </Button>
-          }
-        />
-        <Slide
-          media={
-            <img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png" />
-          }
-          mediaBackgroundStyle={{ backgroundColor: green[400] }}
-          style={{ backgroundColor: green[600] }}
-          title="Coming Soon..."
-          subtitle={
-            <Button variant="contained" color="primary">
-              <Link
-                to="/services"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                See Details
-              </Link>
-            </Button>
-          }
-        />
-      </AutoRotatingCarousel>
-    </div>
-  )
-}
+import { useWindowSize } from "../helpers/index"
 
 const Header = () => {
-  const [handleOpen, setHandleOpen] = useState({ open: false })
-  const handleClick = () => {
-    setHandleOpen({ open: true })
-  }
-  const matches = useMediaQuery("(max-width:600px)")
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  const size = useWindowSize()
   return (
-    <header>
-      <CssBaseline />
-
-      <AutoRotatingCarouselModal
-        isMobile={matches}
-        handleOpen={handleOpen}
-        setHandleOpen={setHandleOpen}
-      />
-
-      <AppBar
-        /** Menu Bar */
-        style={{
-          backgroundColor: "#141821",
-          //backgroundImage: url("stars", true),
-          backgroundSize: "cover",
-        }}
-      >
-        <Toolbar>
-          <Typography style={{ marginRight: "auto" }} variant="h4">
-            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-              {data.site.siteMetadata.title}
-            </Link>
-          </Typography>
-          {/** <img src={Logo} style={{ width: "5%", margin: "1%" }}></img> */}
+    <header
+      style={{
+        backgroundColor: "#141821",
+        height: size.height * 0.1,
+        backgroundSize: "cover",
+      }}
+    >
+      <Toolbar>
+        <Link to="/">
+          <img
+            src={Logo}
+            style={{
+              width: "10%",
+              margin: "1%",
+              marginRight: "auto",
+            }}
+          ></img>
+        </Link>
+        <div style={{ display: "flex", flexDirection: "row" }}>
           <Button color="inherit">
             <Link
-              to="/services"
+              to="/projects"
               style={{ color: "white", textDecoration: "none" }}
             >
-              Services
-            </Link>
-          </Button>
-          <Button color="inherit" onClick={handleClick}>
-            Projects
-          </Button>
-          <Button color="inherit">
-            <Link
-              to="/about"
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              about
+              Projects
             </Link>
           </Button>
           <Button color="inherit">
@@ -152,10 +50,60 @@ const Header = () => {
               Blog
             </Link>
           </Button>
-        </Toolbar>
-      </AppBar>
+          <Button color="inherit">
+            <Link
+              to="/about"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              About
+            </Link>
+          </Button>
+          <Button color="inherit">
+            <Link
+              to="/contact"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Contact
+            </Link>
+          </Button>
+        </div>
+      </Toolbar>
     </header>
   )
 }
 
 export default Header
+
+const styles = {
+  button: {
+    marginRight: 5,
+    marginLeft: 5,
+  },
+}
+
+{
+  /**<h1>Full Stack</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+
+          <li>
+            <Link to="contact">Contact</Link>
+          </li>
+        </ul>
+      </nav> */
+}
