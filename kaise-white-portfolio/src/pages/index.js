@@ -420,6 +420,15 @@ const Index = () => {
                   includes ReactJS, Redux, SQL, JavaScript, Typescript, Docker,
                   AWS, Google Cloud & Firebase.
                 </p>
+                <p></p>
+                <p className={indexStyles.paragraph}>
+                  <Link
+                    style={{ textDecoration: "none", color: "black" }}
+                    to="/contact"
+                  >
+                    Contact Me
+                  </Link>
+                </p>
               </CardContent>
             </Card>
           </Parallax.Layer>
