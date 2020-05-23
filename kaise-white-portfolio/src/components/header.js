@@ -15,6 +15,8 @@ import Logo from "../../static/Logo.svg"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { useWindowSize } from "../helpers/index"
 
+import headerStyles from "../css/header.module.scss" //className={headerStyles.link}
+
 const Header = () => {
   const size = useWindowSize()
   return (
