@@ -8,7 +8,7 @@
   Kaise White Personal Portfolio
 </h1>
 
-This is my personal porfolio build using GatsbyJS & ReactJS.
+This is my personal porfolio build using GatsbyJS, ReactJS & GraphQL along with other frameworks and libraries such as Motion for animations and Material-UI for components.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
