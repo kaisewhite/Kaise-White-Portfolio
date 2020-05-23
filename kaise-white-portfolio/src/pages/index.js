@@ -394,13 +394,13 @@ const Index = () => {
               <CardContent>
                 <Typography>About Me</Typography>
                 <p></p>
-                <p>
+                <p className={indexStyles.paragraph}>
                   I'm a full-stack developer with over 8 years of experience. I
-                  specialize in backend development and database design,
-                  leading/developing the front-end and back-end in addition to
-                  setting up CI/CD. My current toolset includes ReactJS, Redux,
-                  SQL, JavaScript, Typescript, Docker, AWS, Google Cloud &
-                  Firebase.
+                  specialize in backend development and database design & system
+                  architecture. I'll lead/assist in developing the front-end and
+                  back-end in addition to setting up CI/CD. My current toolset
+                  includes ReactJS, Redux, SQL, JavaScript, Typescript, Docker,
+                  AWS, Google Cloud & Firebase.
                 </p>
               </CardContent>
             </Card>
