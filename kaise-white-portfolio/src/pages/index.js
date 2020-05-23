@@ -261,26 +261,75 @@ const Index = () => {
                 >
                   <div
                     style={{
-                      backgroundColor: "#FFF",
+                      backgroundColor: "#333",
+
                       height: 50,
+                      width: 50,
                       borderRadius: 30,
                       margin: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <a href="https://github.com/kaisewhite">
-                      <img src="https://img.icons8.com/ios-filled/50/000000/github.png" />
+                    <a
+                      href="https://github.com/kaisewhite/"
+                      target="_blank"
+                      style={{
+                        fontSize: 10,
+                        textDecoration: "none",
+                        color: "#FFF",
+                      }}
+                    >
+                      Github
                     </a>
                   </div>
                   <div
                     style={{
-                      backgroundColor: "#FFF",
+                      backgroundColor: "#0e76a8",
                       height: 50,
+                      width: 50,
                       borderRadius: 30,
                       margin: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <a href="https://www.linkedin.com/in/kaisewhite/">
-                      <img src="https://img.icons8.com/ios-filled/50/000000/linkedin-circled.png" />
+                    <a
+                      href="https://www.linkedin.com/in/kaisewhite/"
+                      target="_blank"
+                      style={{
+                        fontSize: 10,
+                        textDecoration: "none",
+                        color: "#FFF",
+                      }}
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#D81B60",
+                      height: 50,
+                      width: 50,
+                      borderRadius: 30,
+                      margin: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <a
+                      href="https://1drv.ms/b/s!AmcEoCHIZvT7rp077S_n1m4Z9If8xg?e=1AxcTt"
+                      target="_blank"
+                      style={{
+                        fontSize: 10,
+                        textDecoration: "none",
+                        color: "#FFF",
+                      }}
+                    >
+                      Resume
                     </a>
                   </div>
                 </div>
