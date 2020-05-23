@@ -8,6 +8,7 @@ import JavaScriptLogo from "../../static/stack/JavaScript.svg"
 
 import JavaScriptBackground from "../../static/JavascriptBackground.png"
 import NPMLogo from "../../static/stack/npm.svg"
+
 import GatsbyLogo from "../../static/stack/Gatsby-Monogram.svg"
 import MaterialUILogo from "../../static/stack/Material-UI.svg"
 import FramerMotionLogo from "../../static/stack/framer-motion.png"
@@ -16,9 +17,20 @@ import TypescriptLogo from "../../static/stack/typescript.svg"
 import HTMLLogo from "../../static/stack/html.svg"
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import CSSLogo from "../../static/stack/css.svg"
+import GoogleLogo from "../../static/stack/google.svg"
+import MongoLogo from "../../static/stack/mongo.svg"
+import ReactLogo from "../../static/stack/React.svg"
+import NetlifyLogo from "../../static/stack/netlify.png"
+import AWSLogo from "../../static/stack/AWS.svg"
+import UbuntuLogo from "../../static/stack/ubuntu.svg"
+import GithubLogo from "../../static/stack/Github.svg"
+import PythonLogo from "../../static/stack/python.svg"
+import DockerLogo from "../../static/stack/docker.svg"
+
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
+
 import Radio from "@material-ui/core/Radio"
 import { useWindowSize } from "../helpers/index"
 import { motion } from "framer-motion"
@@ -34,20 +46,8 @@ const Index = () => {
     ease: "linear",
   }
 
-  const HTMLAnimation = [0, 400, 0]
-  const JSAnimation = [120, 520, 120]
-
-  const MaterialAnimation = [300, -100, 300]
-  const NPMAnimation = [-100, -500, -100]
-
-  const NodeAnimation = [-400, 0, -400]
-  const TSAnimation = [-200, 200, -200]
-
-  const GatsbyAnimation = [-500, -1000, -500]
-  const CSSAnimation = [-100, -500, -100]
-
-  const FirebaseAnimation = [-1000, -500, -1000]
-  const FramerAnimation = [-800, -300, -800]
+  const AscendingAnimation = [0, 500, 0]
+  const DescendingRowAnimation = [0, -500, 0]
 
   /************************** END - Animations *********************** */
   //
@@ -84,138 +84,107 @@ const Index = () => {
             style={{
               // backgroundImage: url("stars", true),
               backgroundSize: "cover",
+              marginLeft: "5%",
             }}
           >
-            <motion.img
-              animate={{
-                y: HTMLAnimation,
-              }}
+            <motion.div
+              animate={{ y: AscendingAnimation }}
               transition={transition}
-              src={HTMLLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "5%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: JSAnimation,
-              }}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <img src={HTMLLogo} style={styles.floatingImage} />
+              <img src={NodeLogo} style={styles.floatingImage} />
+              <img src={GatsbyLogo} style={styles.floatingImage} />
+              <img src={JavaScriptLogo} style={styles.floatingImage} />
+            </motion.div>
+          </Parallax.Layer>
+
+          <Parallax.Layer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              // backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              marginLeft: "25%",
+            }}
+          >
+            <motion.div
+              animate={{ y: DescendingRowAnimation }}
               transition={transition}
-              src={JavaScriptLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "5%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: MaterialAnimation,
-              }}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <img src={MaterialUILogo} style={styles.floatingImage} />
+              <img src={DockerLogo} style={styles.floatingImage} />
+              <img src={FramerMotionLogo} style={styles.floatingImage} />
+              <img src={GoogleLogo} style={styles.floatingImage} />
+            </motion.div>
+          </Parallax.Layer>
+
+          <Parallax.Layer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              // backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              marginLeft: "45%",
+            }}
+          >
+            <motion.div
+              animate={{ y: AscendingAnimation }}
               transition={transition}
-              src={MaterialUILogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "25%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: NPMAnimation,
-              }}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <img src={CSSLogo} style={styles.floatingImage} />
+              <img src={NPMLogo} style={styles.floatingImage} />
+              <img src={FirebaseLogo} style={styles.floatingImage} />
+              <img src={ReactLogo} style={styles.floatingImage} />
+            </motion.div>
+          </Parallax.Layer>
+
+          <Parallax.Layer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              // backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              marginLeft: "65%",
+            }}
+          >
+            <motion.div
+              animate={{ y: DescendingRowAnimation }}
               transition={transition}
-              src={NPMLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "25%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: NodeAnimation,
-              }}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <img src={MongoLogo} style={styles.floatingImage} />
+              <img src={TypescriptLogo} style={styles.floatingImage} />
+              <img src={GoogleLogo} style={styles.floatingImage} />
+              <img src={AWSLogo} style={styles.floatingImage} />
+            </motion.div>
+          </Parallax.Layer>
+
+          <Parallax.Layer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{
+              // backgroundImage: url("stars", true),
+              backgroundSize: "cover",
+              marginLeft: "85%",
+            }}
+          >
+            <motion.div
+              animate={{ y: AscendingAnimation }}
               transition={transition}
-              src={NodeLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "50%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: TSAnimation,
-              }}
-              transition={transition}
-              src={TypescriptLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "50%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: CSSAnimation,
-              }}
-              transition={transition}
-              src={CSSLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "65%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: GatsbyAnimation,
-              }}
-              transition={transition}
-              src={GatsbyLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "65%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: FirebaseAnimation,
-              }}
-              transition={transition}
-              src={FirebaseLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "85%",
-                opacity: 0.1,
-              }}
-            />
-            <motion.img
-              animate={{
-                y: FramerAnimation,
-              }}
-              transition={transition}
-              src={FramerMotionLogo}
-              style={{
-                display: "block",
-                width: "10%",
-                marginLeft: "85%",
-                opacity: 0.1,
-              }}
-            />
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <img src={GithubLogo} style={styles.floatingImage} />
+              <img src={NetlifyLogo} style={styles.floatingImage} />
+              <img src={UbuntuLogo} style={styles.floatingImage} />
+              <img src={PythonLogo} style={styles.floatingImage} />
+            </motion.div>
           </Parallax.Layer>
 
           <Parallax.Layer
@@ -409,6 +378,15 @@ const Index = () => {
       </div>
     </Layout>
   )
+}
+
+const styles = {
+  floatingImage: {
+    display: "block",
+    width: "10%",
+    marginBottom: "15%",
+    opacity: 0.1,
+  },
 }
 
 export default Index
