@@ -4,10 +4,10 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 
 import Floating from "../components/floatingIcons"
-import JavaScriptLogo from "../../static/stack/JavaScript.svg"
 
 import JavaScriptBackground from "../../static/JavascriptBackground.png"
 import NPMLogo from "../../static/stack/npm.svg"
+import JavaScriptLogo from "../../static/stack/JavaScript.svg"
 
 import GatsbyLogo from "../../static/stack/Gatsby-Monogram.svg"
 import MaterialUILogo from "../../static/stack/Material-UI.svg"
@@ -30,6 +30,7 @@ import DockerLogo from "../../static/stack/docker.svg"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
 
 import Radio from "@material-ui/core/Radio"
 import { useWindowSize } from "../helpers/index"
@@ -414,11 +415,18 @@ const Index = () => {
                 <p></p>
                 <p className={indexStyles.paragraph}>
                   I'm a full-stack developer with over 8 years of experience. I
-                  specialize in backend development and database design & system
-                  architecture. I'll lead/assist in developing the front-end and
-                  back-end in addition to setting up CI/CD. My current toolset
-                  includes ReactJS, Redux, SQL, JavaScript, Typescript, Docker,
-                  AWS, Google Cloud & Firebase.
+                  specialize in backend development, database design & Dev Ops.
+                  I'll lead/assist in developing the front-end and back-end in
+                  addition to setting up CI/CD. My current toolset includes
+                  ReactJS, Redux, SQL, JavaScript, Typescript, Docker, AWS,
+                  Google Cloud & Firebase. This{" "}
+                  <a
+                    href="https://github.com/kaisewhite/Kaise-White-Portfolio/tree/master/kaise-white-portfolio"
+                    target="_blank"
+                  >
+                    website
+                  </a>{" "}
+                  was built using GatsbyJS, ReactJS, & Netlify.
                 </p>
                 <p></p>
                 <p className={indexStyles.paragraph}>
@@ -426,7 +434,9 @@ const Index = () => {
                     style={{ textDecoration: "none", color: "black" }}
                     to="/contact"
                   >
-                    Contact Me
+                    <Button variant="outlined" color="secondary" size="small">
+                      Contact Me
+                    </Button>
                   </Link>
                 </p>
               </CardContent>

@@ -4,7 +4,9 @@ title: "React Basics"
 date: "May 9, 2020"
 description: "Based on me reading a lot of them"
 readTime: "6 minute read"
-coverPhotoURL: "https://images.pexels.com/photos/4312843/pexels-photo-4312843.jpeg?cs=srgb&dl=cold-snow-wood-landscape-4312843.jpg&fm=jpg"
+coverPhotoURL: "https://www.gatsbyjs.org/monogram.svg"
+tags: ["animals", "Chicago", "zoos"]
+banner: "https://img.icons8.com/color/480/000000/firebase.png"
 ---
 
 I just launched a new bootcamp!
