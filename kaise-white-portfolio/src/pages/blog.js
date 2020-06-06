@@ -6,6 +6,8 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
 
+import ReactScrollableList from "react-scrollable-list"
+
 import JavaScriptBackground from "../../static/JavascriptBackground.png"
 import NPMLogo from "../../static/stack/npm.svg"
 import JavaScriptLogo from "../../static/stack/JavaScript.svg"
@@ -33,6 +35,10 @@ import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import GridListTile from "@material-ui/core/GridListTile"
+import GridList from "@material-ui/core/GridList"
 
 import Radio from "@material-ui/core/Radio"
 import { useWindowSize } from "../helpers/index"
@@ -110,127 +116,129 @@ const Index = () => {
     HTMLLogo,
   ]
 
+  //console.log(data.allMarkdownRemark.edges.length)
   const renderBlogPosts = data.allMarkdownRemark.edges.map(item => {
     return (
-      <motion.div
-        key={item.node.frontmatter.key}
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.8 }}
-      >
-        <Paper
-          style={{
-            flexGrow: 1,
-            width: 400,
-            height: 140,
-            marginBottom: "10%",
-            //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
-            background: `linear-gradient(to top left, ${
-              lightColors[Math.floor(Math.random() * lightColors.length)]
-            }, ${darkColors[Math.floor(Math.random() * lightColors.length)]})`,
-            //color: colors[Math.floor(Math.random() * colors.length)],
-          }}
-        >
-          <div
+      <ListItem key={item.node.frontmatter.key}>
+        <motion.div whileHover={{ scale: 0.8 }} whileTap={{ scale: 0.8 }}>
+          <Paper
             style={{
-              display: "flex",
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "stretch",
+              flexGrow: 1,
+              width: 400,
+              height: 140,
+              marginBottom: "10%",
+              //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+              background: `linear-gradient(to top left, ${
+                lightColors[Math.floor(Math.random() * lightColors.length)]
+              }, ${
+                darkColors[Math.floor(Math.random() * lightColors.length)]
+              })`,
+              //color: colors[Math.floor(Math.random() * colors.length)],
             }}
           >
             <div
               style={{
-                width: 290,
-                height: 140,
-                backgroundColor: "",
                 display: "flex",
-                flexDirection: "column",
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "stretch",
               }}
             >
-              <div style={{ height: 50, backgroundColor: "" }}>
-                <p
-                  style={{
-                    paddingLeft: 10,
-                    fontSize: 12,
-                    fontWeight: "bold",
-                    color: "#FFF",
-                  }}
-                >
-                  {item.node.frontmatter.date}
-                </p>
-              </div>
               <div
                 style={{
-                  height: 90,
+                  width: 290,
+                  height: 140,
                   backgroundColor: "",
                   display: "flex",
                   flexDirection: "column",
                 }}
               >
-                <Typography
-                  variant="h5"
-                  style={{ color: "#FFF", paddingLeft: 10 }}
-                >
-                  <Link
-                    to={`/blog/${item.node.fields.slug}`}
-                    style={{ textDecoration: "none", color: "#FFF" }}
+                <div style={{ height: 50, backgroundColor: "" }}>
+                  <p
+                    style={{
+                      paddingLeft: 10,
+                      fontSize: 12,
+                      fontWeight: "bold",
+                      color: "#FFF",
+                    }}
                   >
-                    {item.node.frontmatter.title}
-                  </Link>
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  style={{ color: "#FFF", paddingLeft: 10 }}
-                >
-                  {item.node.frontmatter.description}
-                </Typography>
-                <Typography
+                    {item.node.frontmatter.date}
+                  </p>
+                </div>
+                <div
                   style={{
+                    height: 90,
+                    backgroundColor: "",
                     display: "flex",
-                    flexDirection: "row",
-                    paddingLeft: 10,
+                    flexDirection: "column",
                   }}
                 >
-                  {item.node.frontmatter.tags.map(item => {
-                    return (
-                      <Typography
-                        style={{
-                          fontSize: 10,
-                          color: "#FFF",
-                          margin: 2.5,
-                          backgroundColor: "#BDBDBD",
-                          borderRadius: 2.5,
-                          padding: 2.5,
-                        }}
-                      >
-                        {item}
-                      </Typography>
-                    )
-                  })}
-                </Typography>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "#FFF", paddingLeft: 10 }}
+                  >
+                    <Link
+                      to={`/blog/${item.node.fields.slug}`}
+                      style={{ textDecoration: "none", color: "#FFF" }}
+                    >
+                      {item.node.frontmatter.title}
+                    </Link>
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ color: "#FFF", paddingLeft: 10 }}
+                  >
+                    {item.node.frontmatter.description}
+                  </Typography>
+                  <Typography
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      paddingLeft: 10,
+                    }}
+                  >
+                    {item.node.frontmatter.tags.map(item => {
+                      return (
+                        <a
+                          key={item}
+                          style={{
+                            fontSize: 10,
+                            color: "#FFF",
+                            margin: 2.5,
+                            backgroundColor: "#BDBDBD",
+                            borderRadius: 2.5,
+                            padding: 2.5,
+                          }}
+                        >
+                          {item}
+                        </a>
+                      )
+                    })}
+                  </Typography>
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 110,
+                  height: 140,
+                  backgroundColor: "",
+                  paddingRight: 5,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  opacity: 0.5,
+                }}
+              >
+                <img
+                  //images[Math.floor(Math.random() * colors.length)]
+                  src={item.node.frontmatter.banner}
+                />
               </div>
             </div>
-            <div
-              style={{
-                width: 110,
-                height: 140,
-                backgroundColor: "",
-                paddingRight: 5,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                opacity: 0.5,
-              }}
-            >
-              <img
-                //images[Math.floor(Math.random() * colors.length)]
-                src={item.node.frontmatter.banner}
-              />
-            </div>
-          </div>
-        </Paper>
-      </motion.div>
+          </Paper>
+        </motion.div>
+      </ListItem>
     )
   })
 
@@ -248,10 +256,11 @@ const Index = () => {
     <Layout>
       <div className={blogStyles.body}>
         <Parallax
-          pages={2}
+          pages={1}
+          scrolling={false}
           style={{
             backgroundImage: `url("${JavaScriptBackground}")`,
-
+            position: "absolute",
             backgroundSize: "cover",
           }}
         >
@@ -366,12 +375,12 @@ const Index = () => {
           </Parallax.Layer>
           <Parallax.Layer
             offset={0}
-            speed={-0.3}
+            speed={0}
             style={{
-              backgroundSize: "80%",
+              //backgroundSize: "80%",
               backgroundPosition: "center",
               display: "flex",
-              marginTop: "5%",
+              //marginTop: "5%",
               alignItems: "center",
 
               flexDirection: "column",
@@ -442,7 +451,33 @@ const Index = () => {
                 style={styles.icon}
               />
             </div>
-            <div>{renderBlogPosts}</div>
+
+            <GridList
+              cols={2}
+              container
+              spacing={3}
+              direction={"column"}
+              style={{
+                overflow: "auto",
+                width: size.width * 0.8,
+
+                display: "flex",
+                justifyContent: "center",
+                marginBottom: 50,
+              }}
+            >
+              {renderBlogPosts.map(n => {
+                return (
+                  <div
+                    num={n}
+                    style={{ height: "auto", width: "auto" }}
+                    key={n}
+                  >
+                    {n}
+                  </div>
+                )
+              })}
+            </GridList>
           </Parallax.Layer>
         </Parallax>
       </div>

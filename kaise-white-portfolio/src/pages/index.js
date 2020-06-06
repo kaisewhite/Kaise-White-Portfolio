@@ -260,19 +260,7 @@ const Index = () => {
                     flexDirection: "row",
                   }}
                 >
-                  <div
-                    style={{
-                      backgroundColor: "#333",
-
-                      height: 50,
-                      width: 50,
-                      borderRadius: 30,
-                      margin: 10,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                  <div>
                     <a
                       href="https://github.com/kaisewhite/"
                       target="_blank"
@@ -282,21 +270,11 @@ const Index = () => {
                         color: "#FFF",
                       }}
                     >
-                      Github
+                      <img src="https://img.icons8.com/nolan/64/github.png" />
                     </a>
                   </div>
-                  <div
-                    style={{
-                      backgroundColor: "#0e76a8",
-                      height: 50,
-                      width: 50,
-                      borderRadius: 30,
-                      margin: 10,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+
+                  <div>
                     <a
                       href="https://www.linkedin.com/in/kaisewhite/"
                       target="_blank"
@@ -306,21 +284,10 @@ const Index = () => {
                         color: "#FFF",
                       }}
                     >
-                      LinkedIn
+                      <img src="https://img.icons8.com/nolan/64/linkedin.png" />
                     </a>
                   </div>
-                  <div
-                    style={{
-                      backgroundColor: "#D81B60",
-                      height: 50,
-                      width: 50,
-                      borderRadius: 30,
-                      margin: 10,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                  <div>
                     <a
                       href="https://1drv.ms/b/s!AmcEoCHIZvT7rp077S_n1m4Z9If8xg?e=1AxcTt"
                       target="_blank"
@@ -330,7 +297,7 @@ const Index = () => {
                         color: "#FFF",
                       }}
                     >
-                      Resume
+                      <img src="https://img.icons8.com/nolan/64/skydrive.png" />
                     </a>
                   </div>
                 </div>
@@ -361,7 +328,7 @@ const Index = () => {
             {/** <img src={url("clients-main")} style={{ width: "40%" }} /> */}
             <Card
               style={{
-                height: size.height * 0.4,
+                height: size.height * 0.45,
                 width: size.width * 0.45,
                 borderRadius: 10,
               }}
@@ -417,9 +384,9 @@ const Index = () => {
                   I'm a full-stack developer with over 8 years of experience. I
                   specialize in backend development, database design & Dev Ops.
                   I'll lead/assist in developing the front-end and back-end in
-                  addition to setting up CI/CD. My current toolset includes
-                  ReactJS, Redux, SQL, JavaScript, Typescript, Docker, AWS,
-                  Google Cloud & Firebase. This{" "}
+                  addition to setting up CI/CD pipeline. My current toolset
+                  includes ReactJS, Redux, SQL, JavaScript (ES6), Typescript,
+                  Docker, AWS, Google Cloud & Firebase. This{" "}
                   <a
                     href="https://github.com/kaisewhite/Kaise-White-Portfolio/tree/master/kaise-white-portfolio"
                     target="_blank"

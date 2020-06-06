@@ -5,7 +5,7 @@ date: "May 10, 2020"
 description: "Based on me reading a lot of them"
 readTime: "12 minute read"
 coverPhotoURL: "https://www.gatsbyjs.org/monogram.svg"
-tags: ["nodejs", "Chicago", "zoos"]
+tags: ["gatsby", "netlify", "react"]
 banner: "https://img.icons8.com/color/480/000000/react-native.png"
 ---
 

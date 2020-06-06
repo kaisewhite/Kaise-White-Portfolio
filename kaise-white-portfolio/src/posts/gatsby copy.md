@@ -1,3 +1,14 @@
+---
+key: "3"
+title: "The Great Gatsby"
+date: "May 10, 2020"
+description: "Based on me reading a lot of them"
+readTime: "12 minute read"
+coverPhotoURL: "https://www.gatsbyjs.org/monogram.svg"
+tags: ["google", "typescript", "firebase"]
+banner: "https://img.icons8.com/color/480/000000/react-native.png"
+---
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
@@ -10,8 +21,6 @@
 
 This is my personal porfolio build using GatsbyJS, ReactJS & GraphQL along with other frameworks and libraries such as Motion for animations and Material-UI for components.
 
-I built this website from scratch but Gatsby has plenty of starter kits to get you up and running quickly.
-
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
 ## 🚀 Quick start
@@ -22,7 +31,8 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     ```shell
     # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
+    gatsby new my-hello-world-starter
+    https://github.com/gatsbyjs/gatsby-starter-hello-world
     ```
 
 1.  **Start developing.**
