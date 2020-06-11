@@ -26,7 +26,7 @@ const Project = props => {
         </h1>
         <p>{props.data.markdownRemark.frontmatter.date}</p>
         <div
-          className={ProjectStyles.ProjectPost}
+          className={ProjectStyles.projectPost}
           dangerouslySetInnerHTML={{
             __html: props.data.markdownRemark.html,
           }}
