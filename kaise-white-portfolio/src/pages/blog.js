@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Parallax } from "react-spring/renderprops-addons"
 import Layout from "../components/layout"
 
@@ -30,6 +30,7 @@ import GithubLogo from "../../static/stack/Github.svg"
 import PythonLogo from "../../static/stack/python.svg"
 import DockerLogo from "../../static/stack/docker.svg"
 import GraphQL from "../../static/stack/graphql.svg"
+import MSSQLLogo from "../../static/stack/MSSQL.svg"
 
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
@@ -102,146 +103,165 @@ const Index = () => {
     "#607d8b",
   ]
 
-  const images = [
-    JavaScriptLogo,
-    ReactLogo,
-    GatsbyLogo,
-    NodeLogo,
-    FirebaseLogo,
-    TypescriptLogo,
-    AWSLogo,
-    CSSLogo,
-    GoogleLogo,
-    FramerMotionLogo,
-    HTMLLogo,
+  /************************** - BEGIN - Filter Buttons *********************** */
+  const logos = [
+    { icon: JavaScriptLogo, name: "javascript" },
+    { icon: ReactLogo, name: "react" },
+    { icon: GatsbyLogo, name: "gatsby" },
+    { icon: NodeLogo, name: "node" },
+    { icon: GraphQL, name: "graphql" },
+    { icon: TypescriptLogo, name: "typescript" },
+    { icon: FirebaseLogo, name: "firebase" },
+    { icon: DockerLogo, name: "docker" },
+    { icon: MSSQLLogo, name: "sql" },
   ]
 
-  //console.log(data.allMarkdownRemark.edges.length)
-  const renderBlogPosts = data.allMarkdownRemark.edges.map(item => {
+  const [filter, setFilter] = useState()
+
+  const filterButtons = logos.map(item => {
     return (
-      <ListItem key={item.node.frontmatter.key}>
-        <motion.div whileHover={{ scale: 0.8 }} whileTap={{ scale: 0.8 }}>
-          <Paper
-            style={{
-              flexGrow: 1,
-              width: 400,
-              height: 140,
-              marginBottom: "10%",
-              //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
-              background: `linear-gradient(to top left, ${
-                lightColors[Math.floor(Math.random() * lightColors.length)]
-              }, ${
-                darkColors[Math.floor(Math.random() * lightColors.length)]
-              })`,
-              //color: colors[Math.floor(Math.random() * colors.length)],
-            }}
-          >
-            <div
+      <div
+        key={item.name}
+        className={blogStyles.icons}
+        onClick={() => setFilter(item.name)}
+      >
+        <motion.img
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+          src={item.icon}
+          style={styles.icon}
+        />
+      </div>
+    )
+  })
+  /************************** - BEGIN - Render Blog Posts *********************** */
+  //console.log(data.allMarkdownRemark.edges.length)
+  const renderBlogPosts = data.allMarkdownRemark.edges
+    //.filter(item => item.node.frontmatter.tags.includes())
+    .map(item => {
+      return (
+        <ListItem key={item.node.frontmatter.key}>
+          <motion.div whileHover={{ scale: 0.8 }} whileTap={{ scale: 0.8 }}>
+            <Paper
               style={{
-                display: "flex",
-                flex: 1,
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "stretch",
+                flexGrow: 1,
+                width: 400,
+                height: 140,
+                marginBottom: "10%",
+                //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+                background: `linear-gradient(to top left, ${
+                  lightColors[Math.floor(Math.random() * lightColors.length)]
+                }, ${
+                  darkColors[Math.floor(Math.random() * lightColors.length)]
+                })`,
+                //color: colors[Math.floor(Math.random() * colors.length)],
               }}
             >
               <div
                 style={{
-                  width: 290,
-                  height: 140,
-                  backgroundColor: "",
                   display: "flex",
-                  flexDirection: "column",
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "stretch",
                 }}
               >
-                <div style={{ height: 50, backgroundColor: "" }}>
-                  <p
-                    style={{
-                      paddingLeft: 10,
-                      fontSize: 12,
-                      fontWeight: "bold",
-                      color: "#FFF",
-                    }}
-                  >
-                    {item.node.frontmatter.date}
-                  </p>
-                </div>
                 <div
                   style={{
-                    height: 90,
+                    width: 290,
+                    height: 140,
                     backgroundColor: "",
                     display: "flex",
                     flexDirection: "column",
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    style={{ color: "#FFF", paddingLeft: 10 }}
-                  >
-                    <Link
-                      to={`/blog/${item.node.fields.slug}`}
-                      style={{ textDecoration: "none", color: "#FFF" }}
+                  <div style={{ height: 50, backgroundColor: "" }}>
+                    <p
+                      style={{
+                        paddingLeft: 10,
+                        fontSize: 12,
+                        fontWeight: "bold",
+                        color: "#FFF",
+                      }}
                     >
-                      {item.node.frontmatter.title}
-                    </Link>
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    style={{ color: "#FFF", paddingLeft: 10 }}
-                  >
-                    {item.node.frontmatter.description}
-                  </Typography>
-                  <Typography
+                      {item.node.frontmatter.date}
+                    </p>
+                  </div>
+                  <div
                     style={{
+                      height: 90,
+                      backgroundColor: "",
                       display: "flex",
-                      flexDirection: "row",
-                      paddingLeft: 10,
+                      flexDirection: "column",
                     }}
                   >
-                    {item.node.frontmatter.tags.map(item => {
-                      return (
-                        <a
-                          key={item}
-                          style={{
-                            fontSize: 10,
-                            color: "#FFF",
-                            margin: 2.5,
-                            backgroundColor: "#BDBDBD",
-                            borderRadius: 2.5,
-                            padding: 2.5,
-                          }}
-                        >
-                          {item}
-                        </a>
-                      )
-                    })}
-                  </Typography>
+                    <Typography
+                      variant="h5"
+                      style={{ color: "#FFF", paddingLeft: 10 }}
+                    >
+                      <Link
+                        to={`/blog/${item.node.fields.slug}`}
+                        style={{ textDecoration: "none", color: "#FFF" }}
+                      >
+                        {item.node.frontmatter.title}
+                      </Link>
+                    </Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ color: "#FFF", paddingLeft: 12, fontSize: 12 }}
+                    >
+                      {item.node.frontmatter.description}
+                    </Typography>
+                    <Typography
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        paddingLeft: 10,
+                      }}
+                    >
+                      {item.node.frontmatter.tags.map(item => {
+                        return (
+                          <a
+                            key={item}
+                            style={{
+                              fontSize: 10,
+                              color: "#FFF",
+                              margin: 2.5,
+                              backgroundColor: "#BDBDBD",
+                              borderRadius: 2.5,
+                              padding: 2.5,
+                            }}
+                          >
+                            {item}
+                          </a>
+                        )
+                      })}
+                    </Typography>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    width: 110,
+                    height: 140,
+                    backgroundColor: "",
+                    paddingRight: 5,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    //opacity: 0.5,
+                  }}
+                >
+                  <img
+                    //images[Math.floor(Math.random() * colors.length)]
+                    src={item.node.frontmatter.banner}
+                  />
                 </div>
               </div>
-              <div
-                style={{
-                  width: 110,
-                  height: 140,
-                  backgroundColor: "",
-                  paddingRight: 5,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  opacity: 0.5,
-                }}
-              >
-                <img
-                  //images[Math.floor(Math.random() * colors.length)]
-                  src={item.node.frontmatter.banner}
-                />
-              </div>
-            </div>
-          </Paper>
-        </motion.div>
-      </ListItem>
-    )
-  })
-
+            </Paper>
+          </motion.div>
+        </ListItem>
+      )
+    })
   /************************** - BEGIN - Animations *********************** */
   const transition = {
     loop: Infinity,
@@ -395,63 +415,7 @@ const Index = () => {
             >
               Blog
             </Typography>
-            <div className={blogStyles.icons}>
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={JavaScriptLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={ReactLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={GatsbyLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={NodeLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={GraphQL}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={TypescriptLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={FirebaseLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={AWSLogo}
-                style={styles.icon}
-              />
-              <motion.img
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                src={DockerLogo}
-                style={styles.icon}
-              />
-            </div>
-
+            <div className={blogStyles.icons}>{filterButtons}</div>
             <GridList
               cols={2}
               container
@@ -467,11 +431,12 @@ const Index = () => {
               }}
             >
               {renderBlogPosts.map(n => {
+                const key = n.key
                 return (
                   <div
+                    key={key}
                     num={n}
                     style={{ height: "auto", width: "auto" }}
-                    key={n}
                   >
                     {n}
                   </div>
