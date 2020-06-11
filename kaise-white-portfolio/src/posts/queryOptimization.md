@@ -7,6 +7,7 @@ readTime: "5 minute read"
 coverPhotoURL: "https://www.gatsbyjs.org/monogram.svg"
 tags: ["sql", "microsoft", "mssql"]
 banner: "https://img.icons8.com/color/48/000000/microsoft-sql-server.png"
+type: "blogPost"
 ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
