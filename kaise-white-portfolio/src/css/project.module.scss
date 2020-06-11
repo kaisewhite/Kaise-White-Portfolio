@@ -1,0 +1,31 @@
+.body {
+  //background-color: #141821;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+  flex-direction: column;
+  //color: #fff;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //min-width: 100vmin;
+  justify-content: space-around;
+}
+
+.blogPost {
+  font-size: 12px;
+  width: 600px;
+}
+
+.title {
+  margin-top: 40px;
+}
+
+.paper {
+  background: linear-gradient(rgba(250, 0, 0, 0.5), transparent);
+  background-color: orange; /*this your primary color*/
+}
