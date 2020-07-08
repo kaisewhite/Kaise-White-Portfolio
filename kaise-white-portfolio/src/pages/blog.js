@@ -3,10 +3,7 @@ import { Parallax } from "react-spring/renderprops-addons"
 import Layout from "../components/layout"
 
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
-
-import ReactScrollableList from "react-scrollable-list"
 
 import JavaScriptBackground from "../../static/JavascriptBackground.png"
 import NPMLogo from "../../static/stack/npm.svg"
@@ -32,13 +29,9 @@ import DockerLogo from "../../static/stack/docker.svg"
 import GraphQL from "../../static/stack/graphql.svg"
 import MSSQLLogo from "../../static/stack/MSSQL.svg"
 
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
-import Button from "@material-ui/core/Button"
-import List from "@material-ui/core/List"
+
 import ListItem from "@material-ui/core/ListItem"
-import GridListTile from "@material-ui/core/GridListTile"
 import GridList from "@material-ui/core/GridList"
 
 import Radio from "@material-ui/core/Radio"
@@ -65,6 +58,7 @@ const Index = () => {
               coverPhotoURL
               tags
               banner
+              type
             }
             fields {
               slug
@@ -137,6 +131,7 @@ const Index = () => {
   /************************** - BEGIN - Render Blog Posts *********************** */
   //console.log(data.allMarkdownRemark.edges.length)
   const renderBlogPosts = data.allMarkdownRemark.edges
+    .filter(item => item.node.frontmatter.type === "blogPost")
     //.filter(item => item.node.frontmatter.tags.includes())
     .map(item => {
       return (
@@ -450,6 +445,8 @@ const Index = () => {
   )
 }
 
+export default Index
+
 const styles = {
   floatingImage: {
     display: "block",
@@ -499,5 +496,3 @@ const styles = {
     color: "#FFF",
   },
 }
-
-export default Index

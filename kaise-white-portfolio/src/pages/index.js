@@ -382,7 +382,7 @@ const Index = () => {
                 <p></p>
                 <p className={indexStyles.paragraph}>
                   I'm a full-stack developer with over 8 years of experience. I
-                  specialize in backend development, database design & dev ops.
+                  specialize in backend development, database design & dev Ops.
                   I'll lead/assist in developing the front-end and back-end in
                   addition to setting up CI/CD pipeline. My current toolset
                   includes ReactJS, Redux, SQL, JavaScript (ES6), Typescript,
