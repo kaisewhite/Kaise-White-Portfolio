@@ -10,8 +10,7 @@
 
 This is my personal porfolio build using GatsbyJS, ReactJS & GraphQL along with other frameworks and libraries such as Motion for animations and Material-UI for components.
 
-![GitHub Logo](/static/Homepage.png)
-Format: ![Alt Text](url)
+![Alt text](static/Homepage.png?raw=true "Title")
 
 I built this website from scratch but Gatsby has plenty of starter kits to get you up and running quickly.
 
