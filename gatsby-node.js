@@ -52,12 +52,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-}
 
-module.exports.createProjects = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  /************************* */
   const projectTemplate = path.resolve("./src/templates/project.js")
-  const res = await graphql(`
+  const res_ = await graphql(`
     query {
       allMarkdownRemark {
         edges {
@@ -80,6 +78,44 @@ module.exports.createProjects = async ({ graphql, actions }) => {
 
   //console.log(res)
 
+  res_.data.allMarkdownRemark.edges.forEach(edge => {
+    createPage({
+      path: `/project/${edge.node.fields.slug}`,
+      component: projectTemplate,
+      context: {
+        slug: edge.node.fields.slug,
+      },
+    })
+  })
+}
+
+/**
+ * module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const projectTemplate = path.resolve("./src/templates/project.js")
+  const res = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(projectTemplate)
+  /**
+   * 1. Get path to template
+   * 2. Get markdown data
+   * 3. Create new Pages
+   
+
+  //console.log(res)
+
   res.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       path: `/project/${edge.node.fields.slug}`,
@@ -90,3 +126,5 @@ module.exports.createProjects = async ({ graphql, actions }) => {
     })
   })
 }
+
+ */
