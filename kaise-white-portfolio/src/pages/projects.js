@@ -136,99 +136,99 @@ const Projects = () => {
     .map(item => {
       return (
         <ListItem key={item.node.frontmatter.key}>
-          <motion.div whileHover={{ scale: 0.8 }} whileTap={{ scale: 0.8 }}>
-            <Paper
-              style={{
-                flexGrow: 1,
-                width: 400,
-                height: 140,
-                marginBottom: "10%",
-                //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
-                background: `linear-gradient(to top left, ${
-                  lightColors[Math.floor(Math.random() * lightColors.length)]
-                }, ${
-                  darkColors[Math.floor(Math.random() * lightColors.length)]
-                })`,
-                //color: colors[Math.floor(Math.random() * colors.length)],
-              }}
-            >
-              <div
+          <Link
+            to={`/blog/${item.node.fields.slug}`}
+            style={{ textDecoration: "none", color: "#FFF" }}
+          >
+            <motion.div whileHover={{ scale: 0.8 }} whileTap={{ scale: 0.8 }}>
+              <Paper
                 style={{
-                  display: "flex",
-                  flex: 1,
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "stretch",
+                  flexGrow: 1,
+                  width: 400,
+                  height: 140,
+                  marginBottom: "10%",
+                  //backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+                  background: `linear-gradient(to top left, ${
+                    lightColors[Math.floor(Math.random() * lightColors.length)]
+                  }, ${
+                    darkColors[Math.floor(Math.random() * lightColors.length)]
+                  })`,
+                  //color: colors[Math.floor(Math.random() * colors.length)],
                 }}
               >
                 <div
                   style={{
-                    width: 290,
-                    height: 140,
-                    backgroundColor: "",
                     display: "flex",
-                    flexDirection: "column",
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "stretch",
                   }}
                 >
-                  <div style={{ height: 50, backgroundColor: "" }}>
-                    <p
-                      style={{
-                        paddingLeft: 10,
-                        fontSize: 12,
-                        fontWeight: "bold",
-                        color: "#FFF",
-                      }}
-                    >
-                      {item.node.frontmatter.date}
-                    </p>
-                  </div>
                   <div
                     style={{
-                      height: 90,
+                      width: 290,
+                      height: 140,
                       backgroundColor: "",
                       display: "flex",
                       flexDirection: "column",
                     }}
                   >
-                    <Typography
-                      variant="h5"
-                      style={{ color: "#FFF", paddingLeft: 10 }}
+                    <div style={{ height: 50, backgroundColor: "" }}>
+                      <p
+                        style={{
+                          paddingLeft: 10,
+                          fontSize: 12,
+                          fontWeight: "bold",
+                          color: "#FFF",
+                        }}
+                      >
+                        {item.node.frontmatter.date}
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        height: 90,
+                        backgroundColor: "",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
                     >
-                      <Link
-                        to={`/blog/${item.node.fields.slug}`}
-                        style={{ textDecoration: "none", color: "#FFF" }}
+                      <Typography
+                        variant="h5"
+                        style={{ color: "#FFF", paddingLeft: 10 }}
                       >
                         {item.node.frontmatter.title}
-                      </Link>
-                    </Typography>
-                    <Typography
-                      variant="subtitle2"
-                      style={{ color: "#FFF", paddingLeft: 12, fontSize: 12 }}
-                    >
-                      {item.node.frontmatter.description}
-                    </Typography>
+                      </Typography>
+                      <Typography
+                        variant="subtitle2"
+                        style={{ color: "#FFF", paddingLeft: 12, fontSize: 12 }}
+                      >
+                        {item.node.frontmatter.description}
+                      </Typography>
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      width: 110,
+                      height: 140,
+                      backgroundColor: "",
+                      paddingRight: 5,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      //opacity: 0.5,
+                    }}
+                  >
+                    <img
+                      //images[Math.floor(Math.random() * colors.length)]
+                      src={item.node.frontmatter.banner}
+                    />
                   </div>
                 </div>
-                <div
-                  style={{
-                    width: 110,
-                    height: 140,
-                    backgroundColor: "",
-                    paddingRight: 5,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    //opacity: 0.5,
-                  }}
-                >
-                  <img
-                    //images[Math.floor(Math.random() * colors.length)]
-                    src={item.node.frontmatter.banner}
-                  />
-                </div>
-              </div>
-            </Paper>
-          </motion.div>
+              </Paper>
+            </motion.div>
+          </Link>
         </ListItem>
       )
     })

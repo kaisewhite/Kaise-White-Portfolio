@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { red, blue, green } from "@material-ui/core/colors"
 import { AutoRotatingCarousel, Slide } from "material-auto-rotating-carousel"
-import Logo from "../../static/Logo.svg"
+import Logo from "../../static/Logo.png"
 
 //import Button from "@material-ui/core/Button"
 import { Link, graphql, useStaticQuery } from "gatsby"
@@ -32,8 +32,8 @@ const Header = () => {
           <img
             src={Logo}
             style={{
-              width: "10%",
-              margin: "1%",
+              width: "6%",
+              margin: "2%",
               marginRight: "auto",
             }}
           ></img>
@@ -52,14 +52,7 @@ const Header = () => {
               Blog
             </Link>
           </Button>
-          <Button color="inherit">
-            <Link
-              to="/about"
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              About
-            </Link>
-          </Button>
+
           <Button color="inherit">
             <Link
               to="/contact"

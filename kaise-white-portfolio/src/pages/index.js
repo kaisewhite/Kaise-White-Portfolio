@@ -249,7 +249,7 @@ const Index = () => {
                 }}
               >
                 <Typography style={{ color: "#FFF", fontSize: 24 }}>
-                  I'm a full-stack developer with a passion for designing
+                  I'm a full-stack engineer with a passion for designing
                 </Typography>
                 <Typography style={{ color: "#FFF", fontSize: 24 }}>
                   beautiful and functional user experiences.
@@ -289,7 +289,7 @@ const Index = () => {
                   </div>
                   <div>
                     <a
-                      href="https://1drv.ms/b/s!AmcEoCHIZvT7rp077S_n1m4Z9If8xg?e=1AxcTt"
+                      href="https://drive.google.com/file/d/1MUj4WbVFQZ_h-t_XHz70wpXF_8ie-arp/view?usp=sharing"
                       target="_blank"
                       style={{
                         fontSize: 10,
@@ -381,19 +381,19 @@ const Index = () => {
                 <Typography>About Me</Typography>
                 <p></p>
                 <p className={indexStyles.paragraph}>
-                  I'm a full-stack developer with over 8 years of experience. I
-                  specialize in backend development, database design & dev Ops.
-                  I'll lead/assist in developing the front-end and back-end in
-                  addition to setting up CI/CD pipeline. My current toolset
-                  includes ReactJS, Redux, SQL, JavaScript (ES6), Typescript,
-                  Docker, AWS, Google Cloud & Firebase. This{" "}
+                  Certified AWS Solutions Architect with 10+ years of
+                  professional IT experience.  Expertise in architecting,
+                  designing, developing, and implementing cloud solutions on AWS
+                  platforms. 8+ years of strong database development,
+                  administration, & performance tuning. 6+ years of backend
+                  development and support. I built this{" "}
                   <a
                     href="https://github.com/kaisewhite/Kaise-White-Portfolio/tree/master/kaise-white-portfolio"
                     target="_blank"
                   >
                     website
                   </a>{" "}
-                  was built using GatsbyJS, ReactJS, & Netlify.
+                  was built using JavaScript, GatsbyJS, ReactJS, & Netlify.
                 </p>
                 <p></p>
                 <p className={indexStyles.paragraph}>
