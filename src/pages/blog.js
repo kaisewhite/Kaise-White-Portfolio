@@ -35,15 +35,12 @@ import ListItem from "@material-ui/core/ListItem"
 import GridList from "@material-ui/core/GridList"
 
 import Radio from "@material-ui/core/Radio"
-import { useWindowSize } from "../helpers/index"
 import { motion } from "framer-motion"
 import { shuffle } from "lodash"
 
 import blogStyles from "../css/blog.module.scss"
 
 const Index = () => {
-  const size = useWindowSize()
-
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -418,7 +415,7 @@ const Index = () => {
               direction={"column"}
               style={{
                 overflow: "auto",
-                width: size.width * 0.8,
+                width: 900,
 
                 display: "flex",
                 justifyContent: "center",

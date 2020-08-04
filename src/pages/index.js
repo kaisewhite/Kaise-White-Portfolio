@@ -33,13 +33,11 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 
 import Radio from "@material-ui/core/Radio"
-import { useWindowSize } from "../helpers/index"
 import { motion } from "framer-motion"
 
 import indexStyles from "../css/index.module.scss"
 
 const Index = () => {
-  const size = useWindowSize()
   /************************** - BEGIN - Animations *********************** */
   const transition = {
     loop: Infinity,
@@ -328,15 +326,15 @@ const Index = () => {
             {/** <img src={url("clients-main")} style={{ width: "40%" }} /> */}
             <Card
               style={{
-                height: size.height * 0.45,
-                width: size.width * 0.45,
+                height: "auto",
+                width: 550,
                 borderRadius: 10,
               }}
             >
               <CardContent
                 style={{
                   backgroundColor: "#d8d8d8",
-                  height: size.height * 0.06,
+                  height: "auto",
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -346,8 +344,8 @@ const Index = () => {
                   style={{
                     color: "#ff483f",
                     backgroundColor: "#ff483f",
-                    height: size.height * 0.005,
-                    width: size.width * 0.005,
+                    height: 10,
+                    width: 10,
                     marginTop: 5,
                     marginRight: 5,
                   }}
@@ -357,8 +355,8 @@ const Index = () => {
                   style={{
                     color: "#ecbb38",
                     backgroundColor: "#ecbb38",
-                    height: size.height * 0.005,
-                    width: size.width * 0.005,
+                    height: 10,
+                    width: 10,
                     marginTop: 5,
                     marginRight: 5,
                     marginLeft: 5,
@@ -369,8 +367,8 @@ const Index = () => {
                   style={{
                     color: "#36d3a8",
                     backgroundColor: "#36d3a8",
-                    height: size.height * 0.005,
-                    width: size.width * 0.005,
+                    height: 10,
+                    width: 10,
                     marginTop: 5,
                     marginRight: 5,
                     marginLeft: 5,

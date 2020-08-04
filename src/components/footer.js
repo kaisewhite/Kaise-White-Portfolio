@@ -13,11 +13,8 @@ import Logo from "../../static/Logo.svg"
 
 //import Button from "@material-ui/core/Button"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { useWindowSize } from "../helpers/index"
 
 const Footer = () => {
-  const size = useWindowSize()
-
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -33,7 +30,7 @@ const Footer = () => {
     <footer
       style={{
         backgroundColor: "#141821",
-        height: size.height * 0.1,
+        height: 80,
         backgroundSize: "cover",
       }}
     >

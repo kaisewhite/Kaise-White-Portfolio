@@ -6,14 +6,12 @@ import MaterialUILogo from "../../static/stack/Material-UI.svg"
 import ReactLogo from "../../static/stack/react-native.svg"
 import FirebaseLogo from "../../static/stack/firebase.svg"
 import TypescriptLogo from "../../static/stack/typescript.svg"
-import { useWindowSize } from "../helpers/index"
+
 import { motion } from "framer-motion"
 
 import { Frame } from "framer"
 
 const Floating = () => {
-  const size = useWindowSize()
-
   const transition = {
     loop: Infinity,
     duration: 5,
@@ -33,7 +31,7 @@ const Floating = () => {
       style={{
         //backgroundColor: "#FFF",
         height: 200,
-        width: size.width * 0.6,
+        width: 400,
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",

@@ -40,12 +40,9 @@ import DockerLogo from "../../static/stack/docker.svg"
 import GraphQL from "../../static/stack/graphql.svg"
 import MSSQLLogo from "../../static/stack/MSSQL.svg"
 
-import { useWindowSize } from "../helpers/index"
 import projectStyles from "../css/project.module.scss"
 
 const Projects = () => {
-  const size = useWindowSize()
-
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -394,7 +391,7 @@ const Projects = () => {
               direction={"column"}
               style={{
                 overflow: "auto",
-                width: size.width * 0.8,
+                width: 400,
 
                 display: "flex",
                 justifyContent: "center",

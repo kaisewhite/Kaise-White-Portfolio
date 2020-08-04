@@ -45,12 +45,9 @@ import DockerLogo from "../../static/stack/docker.svg"
 import GraphQL from "../../static/stack/graphql.svg"
 import MSSQLLogo from "../../static/stack/MSSQL.svg"
 
-import { useWindowSize } from "../helpers/index"
 import projectStyles from "../css/project.module.scss"
 
 const Contact = () => {
-  const size = useWindowSize()
-
   const transition = {
     loop: Infinity,
     duration: 50,

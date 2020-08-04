@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+/**import { useState, useEffect } from "react"
 // Hook
 export const useWindowSize = () => {
   const isClient = typeof window === "object"
@@ -26,4 +26,4 @@ export const useWindowSize = () => {
   }, []) // Empty array ensures that effect is only run on mount and unmount
 
   return windowSize
-}
+} */
